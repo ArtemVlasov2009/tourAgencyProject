@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Tour
+{% endblock %}
+
+
+{% block content %}
+
+  <a href="/">Home</a>
+
+
+
+  {% if tours %}
+    {% for tour in tours %}
+    <hr>
+      <h1><a href="{{ url_for ('tour.render_tour_info', id = tour.id) }}">{{ tour.title}}</a></h1>
+      <h3>{{ tour.price }}</h3>
+      <h2>{{ tour.country }}</h2>
+    <hr>
+
+
+    {% endfor %}
+
+  {% endif %}
+
+
+{% endblock %}

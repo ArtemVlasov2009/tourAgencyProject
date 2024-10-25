@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+  Welcome
+{% endblock %}
+
+{% block content %}
+
+  <h1>Вітаю вас {{username}} </h1>
+  <a href="/tour">Tour</a>
+  <a href="/">Home</a>
+  <form method="post" class = "logout-form">
+      <button type = "submit" name = "logout">Вийти з аккаунту</button> 
+  </form>
+
+  
+{% endblock %}

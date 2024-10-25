@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    User
+{% endblock %}
+
+
+{% block content %}
+    {% if not current_user.is_authenticated %}
+        <a href="/">Home</a>
+        <a href="{{ url_for ('user_page.render_registration') }}">Registration</a>
+        <a href="{{ url_for ('user_page.render_login') }}">Login</a>
+    {% endif %}
+
+    {% if current_user.is_authenticated %}
+    <form method="post" class = "logout-form">
+        <button type = "submit" name = "logout">Log out</button> 
+    </form>
+
+    {% endif %}
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

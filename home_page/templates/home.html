@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Головна Сторінка 
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('home.static', filename = 'home.css') }}">
+{% endblock %}
+{% block content %}
+    <a href="/user">User</a>
+    <!-- <a href="/tour">Tour</a> -->
+<div> 
+    <button class = "comment">Написати відгук</button> 
+</div>
+    <div class="appearances" style="display: none;">
+        <form method="post">
+            <h1>Залиште свій відгук</h1>
+            <label >Ім'я:</label>
+            <input type="text" name = "name">
+            <label>Email</label>
+            <input type="text" name = "email">
+            <label>Review</label>
+            <textarea name="review" id="review"></textarea>
+            <button type="submit">send feedback</button>
+        </form>
+    </div>   
+    <script src="{{ url_for('home.static', filename='home.js') }}"></script>
+    
+</div>
+{% endblock %}
